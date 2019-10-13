@@ -58,7 +58,7 @@ export default {
    methods: {
      onSubmit()
      {
-         this.errors= [];
+         this.errors= [];            //obligation de remplir tous les champs
 
          if (!this.name)
          {
@@ -67,7 +67,7 @@ export default {
 
          if (!this.username)
          {
-             this.errors.push('Username is requires.');
+             this.errors.push('Username is required.');
          }
 
          if (!this.password)
@@ -77,7 +77,7 @@ export default {
 
          if (!this.passwordAgain)
          {
-              this.errors.push('Password confirmation is resuired.');
+              this.errors.push('Password confirmation is required.');
          }
 
          if (this.password!==this.passwordAgain)

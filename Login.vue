@@ -54,7 +54,7 @@ export default {
 
          
 
-         if (!this.username)
+         if (!this.username)  //obligation de remplir tous les champs
          {
              this.errors.push('Username is requires.');
          }

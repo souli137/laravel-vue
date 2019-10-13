@@ -15,7 +15,7 @@ class AppController extends Controller
      return response()->json(['user' => $user], 200);
  }
 
- public function login(Request $request)
+ public function login(Request $request)      //fonction permettant à l'utilisateur de s'authentifier
  {
      if(Auth::attempt(['username' => $request->username, 'password' => $request->password], true))
      {
@@ -26,7 +26,7 @@ class AppController extends Controller
      }
  }
  
- public function rgister(Request $request)
+ public function rgister(Request $request)    //Fonction permettant d'enregistrer l'authentification
  {
      $user=User::where('username', $request->username)->first();
 
@@ -48,12 +48,12 @@ class AppController extends Controller
      return response()->json($user,200);
  }
 
-  public function logout()
+  public function logout()                   //fonction permettant la déconnexion de l'utilisateur
   {
     Auth::logout();
   }
 
-  public function changePassword(Request $request, $id)
+  public function changePassword(Request $request, $id)     //fonction permettant de mettre à jour le mot de passe
   {
     $user = User::find($id);
 
